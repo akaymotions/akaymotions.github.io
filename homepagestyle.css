@@ -141,6 +141,7 @@ section .view-more{
 @media screen and (max-width: 600px) {
 section .view-more{
     margin-left: 72%;
+    margin-right: 10%;
     margin-top: 40px;
     font-size: 25px;
     background: linear-gradient(45deg, #ff6600, #fbff00);
