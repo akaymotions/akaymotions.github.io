@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AkayMotions Portfolio</title>
+    <link rel="stylesheet" href="homepagestyle.css">
+    <script src="homepagescript.js"></script>
+</head>
+<body>
+    <div class="container">
+    <img src="Image/Akanimo website design.png" class="landingpage-image" alt="Landing Page Image">
+
+<section class="section">
+    <h1>Animated Reels ></h1>
+    <div class="video-grid">
+        <div class="video-trigger">
+        <video src="Video/MUSIC ANIMATION [1].mp4"
+        poster="Image/Artboard 1 (MUSIC).png" muted loop>
+    </video>
+    <div class="play-button"></div>
+    <p class="video-label">Music</p>
+     </div>
+    
+    <div class="video-trigger">
+     <video src="Video/SQUID GAME_Akaymotions.mp4"
+        poster="Image/SQUIDGAME 7.png" muted loop>
+     </video>
+     <div class="play-button"></div>
+     <p class="video-label">Squid Game</p>
+    </div>
+    </div>
+
+</section>
+
+<section class="section">
+    <h1>Animated Ads ></h1>
+    <div class="video-grid2">
+        <div class="video-trigger">
+        <video src="Video/CHIMOBI ADVERT_2.mp4"
+        poster="Image/Chimobi thumbnail.png" muted loop>
+        </video>
+        <div class="play-button"></div>
+        </div>
+        <p class="video-label">Promise Is Creative</p>
+
+        <div class="video-trigger">
+        <video src="Video/ROBUSNIPE.mp4"
+        poster="Image/Robusnipe thumbnail.png" muted loop>
+      </video>
+      <div class="play-button"></div>
+      </div>
+      <p class="video-label">Robusnipe || Web3</p>
+    </div>
+
+ <button onclick="window.location.href='Viewmore1.html'" class="view-more">VIEW MORE</button>
+</section>
+
+<section class="section">
+    <h1>Animated Logo Intros ></h1>
+    <div class="video-grid2">
+        <div class="video-trigger">
+        <video src="Video/Ola of houston logo animation_3_1.mp4"
+        poster="Image/OOH INTRO THUMBNAIL.png" muted loop>
+        </video>
+        <div class="play-button"></div>
+        </div>
+        <p class="video-label">OOH Studio</p>
+        
+    
+        <div class="video-trigger">
+       <video src="Video/Kunle kapture youtube intro FINAL 2.mp4"
+        poster="Image/Kunle kapture ad thumbnail.png" muted loop>
+       </video>
+       <div class="play-button"></div>
+        </div>
+        <p class="video-label">Kunle Kapture Intro</p>
+    </div>
+    
+    <button onclick="window.location.href='Viewmore2.html'" class="view-more">VIEW MORE</button>
+
+</section>
+
+
+<footer class="connect-section">
+  <h2>Connect With Me</h2>
+  <div class="social-links">
+    <a href="https://instagram.com/akaymotions" target="_blank">
+      <img src="icons/instagram_2111463.png" alt="Instagram">
+      Instagram
+    </a>
+    <a href="https://wa.me/2348128042359" target="_blank">
+      <img src="icons/whatsapp_2504957.png" alt="WhatsApp">
+      WhatsApp
+    </a>
+    <a href="tel:+2348128042359">
+      <img src="icons/mobile_16076069.png" alt="Call">
+      Call Me
+    </a>
+  </div>
+</footer>
+
+    
+<script>
+    document.querySelectorAll('video').forEach(video => {
+      video.addEventListener('play', () => {
+        document.querySelectorAll('video').forEach(v => {
+          if (v !== video) {
+            v.pause();
+            v.load();    // Reload to show the poster
+          }
+        });
+      });
+    });
+  </script>
+
+<script>
+document.querySelectorAll('.video-trigger video').forEach(video => {
+  video.addEventListener('click', function () {
+    const lightbox = document.getElementById('videoLightbox');
+    const lightboxVideo = document.getElementById('lightboxVideo');
+    lightboxVideo.src = this.currentSrc;
+    lightbox.style.display = 'flex';
+  });
+});
+
+function closeLightbox() {
+  const lightbox = document.getElementById('videoLightbox');
+  const lightboxVideo = document.getElementById('lightboxVideo');
+  lightbox.style.display = 'none';
+  lightboxVideo.pause();
+  lightboxVideo.src = '';
+}
+
+// Close the lightbox when clicking anywhere outside the video (but not on the close button)
+document.getElementById('videoLightbox').addEventListener('click', function(event) {
+  const videoContainer = document.getElementById('lightboxVideo');
+  const closeButton = document.querySelector('.close-btn');
+
+  // Check if the click target is outside the video and the close button
+  if (!videoContainer.contains(event.target) && !closeButton.contains(event.target)) {
+    closeLightbox();
+  }
+});
+
+// Prevent the close button from triggering the close action for the lightbox itself
+document.querySelector('.close-btn').addEventListener('click', function(event) {
+  event.stopPropagation(); // Prevent the click from bubbling up to the video lightbox container
+  closeLightbox();
+});
+
+</script>
+
+<div class="video-lightbox"
+id="videoLightbox">
+<span class="close-btn" onclick="closeLightbox()">
+  <img src="icons/cross-arrows_15990273.png" alt="Close" />
+</span>
+<video id="lightboxVideo" controls autoplay></video>
+</div>
+
+</body>
+</html>

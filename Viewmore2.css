@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 3%;
+  font-family: 'montserrat medium';
+  padding-bottom: 5%;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    text-align: center;
+    padding-top: 3%;
+    font-family: 'montserrat medium';
+    padding-bottom: 5%;
+    font-size: x-large;
+  }
+}
+
+
+.video-grid{
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+ 
+}
+
+@media screen and (max-width: 600px) {
+  .video-grid{
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+}
+}
+
+.video-grid video{
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-top: 20px;
+}
+
+
+.video-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .video-lightbox video {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .video-grid video:hover {
+    transform: scale(1.05); /* Slightly zoom in the video on hover */
+    transition: transform 0.3s ease;
+  }
+
+  .video-trigger{
+    position: relative;
+    display: inline-block;
+  }
+
+  .video-trigger video{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+  }
+
+  .play-button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: url('icons/material-symbols_play-circle-rounded.png') no-repeat center center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  @media screen and (max-width: 600px) {
+    .play-button{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        background: url('icons/material-symbols_play-circle-rounded.png') no-repeat center center;
+        background-size: contain;
+        pointer-events: none;
+        z-index: 2;
+      }
+  }
+
+  .home-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'poppins';
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: background 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #333;
+}
+
+.video-label {
+  font-family: 'Montserrat medium';
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 25px;
+  margin-left: 5%;
+  margin-bottom: 60px;
+  text-align: left;
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .video-label {
+    font-family: 'Montserrat medium';
+    font-size: 0.9rem;
+    color: #333;
+    margin-top: 15px;
+    margin-left: 5%;
+    margin-bottom: 30px;
+    text-align: left;
+    display: block;
+  }
+}
+
+.connect-section {
+  margin-top: 60px;
+  padding: 40px 20px;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  font-family: 'poppins';
+}
+
+.connect-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  background: #222;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #444;
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  width: 40px; /* adjust based on your icon size */
+  height: 40px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5%; /* Increase the value to move it down */
+  right: 5%;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10000; /* Ensures the close button is always above other content */
+}
+
+
+.close-btn img {
+  width: 30px;
+  height: 30px;
+}

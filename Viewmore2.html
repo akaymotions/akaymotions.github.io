@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Logo Intros</title>
+    <link rel="stylesheet" href="Viewmore2.css">
+</head>
+<body>
+    <h1>Animated Logo Intros</h1>
+
+    <section class="section">
+        <div class="video-grid">
+            <div class="video-trigger">
+            <video src="Video/Ola of houston logo animation_3_1.mp4"
+            poster="Image/OOH INTRO THUMBNAIL.png" muted loop>
+            </video>
+            <div class="play-button"></div>
+            
+        </div>
+        <p class="video-label">OOH Studio</p>
+            
+            <div class="video-trigger">
+          <video src="Video/KUNLE KAPTURE AD_11 2.mp4"
+            poster="Image/Kunle kapture ad thumbnail.png" muted loop>
+          </video>
+          <div class="play-button"></div>         
+        </div>
+        <p class="video-label">Kunle Kapture</p>
+
+          <div class="video-trigger">
+          <video src="Video/DIAMOND MOTORS.mp4"
+            poster="Image/DIAMOND THUMBNAIL.png" muted loop>
+            </video>
+            <div class="play-button"></div>
+            
+        </div>
+        <p class="video-label">Diamond Motors</p>
+
+            <div class="video-trigger">
+          <video src="Video/GENERATION NEXT FINAL.mp4"
+            poster="Image/Generation Next logo thumbnail.png" muted loop>
+          </video>
+          <div class="play-button"></div>
+          
+        </div>
+        <p class="video-label">Generation Next</p>
+
+          <div class="video-trigger">
+          <video src="Video/herb.mp4"
+            poster="Image/Herbal Fresh logo thumbnail.png" muted loop>
+          </video>
+          <div class="play-button"></div>
+          
+        </div>
+        <p class="video-label">Herbal Fresh</p>
+
+          <div class="video-trigger">
+          <video src="Video/Int'l Believers Convergence logo intro.mp4"
+            poster="Image/IBC LOGO INTRO THUMBNAIL.png" muted loop>
+          </video>
+          <div class="play-button"></div>
+          
+        </div>
+        <p class="video-label">International Believers Convergence</p>
+
+          <div class="video-trigger">
+          <video src="Video/poc full final.mp4"
+            poster="Image/POC LOGO INTRO THUMBNAIL.png" muted loop>
+          </video>
+          <div class="play-button"></div>
+          
+        </div>
+        <p class="video-label">POC</p>
+
+          <div class="video-trigger">
+          <video src="Video/Promise is Creative final 2.mp4"
+            poster="Image/Promise Logo thumbnail.png" muted loop>
+          </video>
+          <div class="play-button"></div>
+          
+        </div>
+        <p class="video-label">Promise Is Creative</p>
+
+          <div class="video-trigger">
+          <video src="Video/Smooth Shots final.mp4"
+            poster="Image/Smooth shots logo thumbnail.png" muted loop>
+          </video>
+          <div class="play-button"></div>
+          
+        </div>
+        <p class="video-label">Smooth Shots</p>
+
+          <div class="video-trigger">
+          <video src="Video/THINK GROWTH 4.mp4"
+            poster="Image/Think growth logo thumbnail.png" muted loop>
+          </video>
+          <div class="play-button"></div>
+          
+          </div>
+          <p class="video-label">Think Growth</p>
+
+          <div class="video-trigger">
+            <video src="Video/victory chapel logo animation.mp4"
+              poster="Image/VC logo thumbnail.png" muted loop>
+            </video>
+            <div class="play-button"></div>
+            
+            </div>
+            <p class="video-label">Victory Chapel</p>
+
+        </div>
+
+        <footer class="connect-section">
+          <h2>Connect With Me</h2>
+          <div class="social-links">
+            <a href="https://instagram.com/akaymotions" target="_blank">
+              <img src="icons/instagram_2111463.png" alt="Instagram">
+              Instagram
+            </a>
+            <a href="https://wa.me/2348128042359" target="_blank">
+              <img src="icons/whatsapp_2504957.png" alt="WhatsApp">
+              WhatsApp
+            </a>
+            <a href="tel:+2348128042359">
+              <img src="icons/mobile_16076069.png" alt="Call">
+              Call Me
+            </a>
+          </div>
+        </footer>
+
+
+
+        <script>
+  document.querySelectorAll('video').forEach(video => {
+    video.addEventListener('play', () => {
+      document.querySelectorAll('video').forEach(v => {
+        if (v !== video) {
+          v.pause();
+          v.load();    // Reload to show the poster
+        }
+      });
+    });
+  });
+
+</script>
+
+<script>
+    document.querySelectorAll('.video-trigger video').forEach(video => {
+  video.addEventListener('click', function () {
+    const lightbox = document.getElementById('videoLightbox');
+    const lightboxVideo = document.getElementById('lightboxVideo');
+    lightboxVideo.src = this.currentSrc;
+    lightbox.style.display = 'flex';
+  });
+});
+
+function closeLightbox() {
+  const lightbox = document.getElementById('videoLightbox');
+  const lightboxVideo = document.getElementById('lightboxVideo');
+  lightbox.style.display = 'none';
+  lightboxVideo.pause();
+  lightboxVideo.src = '';
+}
+</script>
+
+
+
+<a href="index.html" class="home-button" title="Go back to homepage">🏠 Home</a>
+
+<a href="index.html" class="back-button" title="Go back to homepage">
+  <img src="icons/arrow-back-regular-24.png" alt="homepage">
+</a>
+
+<div class="video-lightbox"
+id="videoLightbox">
+<span class="close-btn" onclick="closeLightbox()">
+  <img src="icons/cross-arrows_15990273.png" alt="Close" />
+</span>
+<video id="lightboxVideo" controls autoplay></video>
+</div>
+
+</body>
+</html>
