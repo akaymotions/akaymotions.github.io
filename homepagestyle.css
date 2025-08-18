@@ -371,7 +371,7 @@ section .view-more:hover {
   font-style: italic;
 }
 
-/* Scroll-down indicator (fixed + clear black arrow) */
+/* Scroll-down indicator (white circle with arrow) */
 .scroll-down-indicator {
   position: fixed;
   bottom: 20px;
@@ -380,13 +380,21 @@ section .view-more:hover {
   z-index: 1000;
   animation: bounce 2s infinite;
   cursor: pointer;
+  background: white;       /* white circle */
+  border-radius: 50%;      /* makes it round */
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* subtle shadow */
 }
 
 .down-arrow {
-  font-size: 3rem;     /* bigger, clearer */
-  color: black;        /* solid black */
-  opacity: 1;          /* fully visible */
-  font-weight: bold;   /* makes arrow thicker */
+  font-size: 2rem;     /* big arrow inside */
+  color: black;        /* arrow stays black */
+  opacity: 1;
+  font-weight: bold;
 }
 
 /* Bounce animation */
@@ -401,4 +409,5 @@ section .view-more:hover {
     transform: translate(-50%, -7px);
   }
 }
+
 
