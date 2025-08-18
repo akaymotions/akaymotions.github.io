@@ -5,41 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AkayMotions Portfolio</title>
     <link rel="stylesheet" href="homepagestyle.css">
-    <script src="homepagescript.js"></script>
+    <script src="homepagescript.js" defer></script>
 </head>
 <body>
     <div class="container">
-        
     <img src="Image/Akanimo website design.png" class="landingpage-image" alt="Landing Page Image">
-        
+
 <section class="section">
     <h1>Animated Reels ></h1>
-    <div class="video-grid">
-        <div class="video-trigger">
-        <video src="Video/MUSIC ANIMATION [1].mp4"
-        poster="Image/Artboard 1 (MUSIC).png" muted loop>
-    </video>
-    <div class="play-button"></div>
-    <p class="video-label">Music</p>
-     </div>
-    
-    <div class="video-trigger">
-     <video src="Video/SQUID GAME_Akaymotions.mp4"
-        poster="Image/SQUIDGAME 7.png" muted loop>
-     </video>
-     <div class="play-button"></div>
-     <p class="video-label">Squid Game</p>
-    </div>
+    <div class="reels-wrapper">
+        <div class="scroll-arrow left-arrow">&#10094;</div>
+        <div class="video-grid">
+            <div class="video-trigger">
+            <video src="Video/MUSIC ANIMATION [1].mp4"
+            poster="Image/Artboard 1 (MUSIC).png" muted loop>
+            </video>
+            <div class="play-button"></div>
+            <p class="video-label">Music</p>
+            </div>
+            
+            <div class="video-trigger">
+            <video src="Video/SQUID GAME_Akaymotions.mp4"
+            poster="Image/SQUIDGAME 7.png" muted loop>
+            </video>
+            <div class="play-button"></div>
+            <p class="video-label">Squid Game</p>
+            </div>
+            
+            <div class="video-trigger">
+            <video src="Video/Jet2Holiday Small.mp4"
+            poster="Image/Artboard 1.png" muted loop>
+            </video>
+            <div class="play-button"></div>
+            <p class="video-label">Jet2Holiday</p>
+            </div>
 
-        <div class="video-trigger">
-     <video src="Video/Jet2Holiday Small.mp4"
-        poster="Image/Artboard 1_035556.png" muted loop>
-     </video>
-     <div class="play-button"></div>
-     <p class="video-label">Jet2 Holiday</p>
+            <div class="video-trigger">
+            <video src="Video/Blast_.mp4"
+            poster="Image/Artboard 4.png" muted loop>
+            </video>
+            <div class="play-button"></div>
+            <p class="video-label">Blast</p>
+            </div>
+        </div>
+        <div class="scroll-arrow right-arrow">&#10095;</div>
     </div>
-    </div>
-
 </section>
 
 <section class="section">
@@ -56,10 +66,10 @@
         <div class="video-trigger">
         <video src="Video/ROBUSNIPE.mp4"
         poster="Image/Robusnipe thumbnail.png" muted loop>
-      </video>
-      <div class="play-button"></div>
-      </div>
-      <p class="video-label">Robusnipe || Web3</p>
+        </video>
+        <div class="play-button"></div>
+        </div>
+        <p class="video-label">Robusnipe || Web3</p>
     </div>
 
  <button onclick="window.location.href='Viewmore1.html'" class="view-more">VIEW MORE</button>
@@ -76,20 +86,17 @@
         </div>
         <p class="video-label">OOH Studio</p>
         
-    
         <div class="video-trigger">
-       <video src="Video/Kunle kapture youtube intro FINAL 2.mp4"
+        <video src="Video/Kunle kapture youtube intro FINAL 2.mp4"
         poster="Image/Kunle kapture ad thumbnail.png" muted loop>
-       </video>
-       <div class="play-button"></div>
+        </video>
+        <div class="play-button"></div>
         </div>
         <p class="video-label">Kunle Kapture Intro</p>
     </div>
     
     <button onclick="window.location.href='Viewmore2.html'" class="view-more">VIEW MORE</button>
-
 </section>
-
 
 <footer class="connect-section">
   <h2>Connect With Me</h2>
@@ -109,7 +116,6 @@
   </div>
 </footer>
 
-    
 <script>
     document.querySelectorAll('video').forEach(video => {
       video.addEventListener('play', () => {
@@ -121,7 +127,7 @@
         });
       });
     });
-  </script>
+</script>
 
 <script>
 document.querySelectorAll('.video-trigger video').forEach(video => {
@@ -136,37 +142,31 @@ document.querySelectorAll('.video-trigger video').forEach(video => {
 function closeLightbox() {
   const lightbox = document.getElementById('videoLightbox');
   const lightboxVideo = document.getElementById('lightboxVideo');
-  lightbox.style.display = 'none';
-  lightboxVideo.pause();
-  lightboxVideo.src = '';
+    lightbox.style.display = 'none';
+    lightboxVideo.pause();
+    lightboxVideo.src = '';
 }
 
-// Close the lightbox when clicking anywhere outside the video (but not on the close button)
 document.getElementById('videoLightbox').addEventListener('click', function(event) {
   const videoContainer = document.getElementById('lightboxVideo');
   const closeButton = document.querySelector('.close-btn');
-
-  // Check if the click target is outside the video and the close button
   if (!videoContainer.contains(event.target) && !closeButton.contains(event.target)) {
     closeLightbox();
   }
 });
 
-// Prevent the close button from triggering the close action for the lightbox itself
 document.querySelector('.close-btn').addEventListener('click', function(event) {
-  event.stopPropagation(); // Prevent the click from bubbling up to the video lightbox container
+  event.stopPropagation();
   closeLightbox();
 });
-
 </script>
 
-<div class="video-lightbox"
-id="videoLightbox">
+<div class="video-lightbox" id="videoLightbox">
 <span class="close-btn" onclick="closeLightbox()">
   <img src="icons/cross-arrows_15990273.png" alt="Close" />
 </span>
 <video id="lightboxVideo" controls autoplay
-    controlsList="nodownload" 
+controlsList="nodownload" 
   oncontextmenu="return false"></video>
 </div>
 
