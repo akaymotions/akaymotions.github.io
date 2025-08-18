@@ -359,3 +359,46 @@ section .view-more:hover {
         text-align: left;
     }
 }
+
+/* Tap to Play under Animated Reels */
+.tap-to-play {
+  text-align: left;   /* aligns with your heading */
+  font-size: 0.9rem;
+  color: black;       /* black and visible */
+  margin: 0px 0 0px 0; /* tighten spacing above/below */
+  padding-left: 10%;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+/* Scroll-down indicator (fixed + clear black arrow) */
+.scroll-down-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+.down-arrow {
+  font-size: 3rem;     /* bigger, clearer */
+  color: black;        /* solid black */
+  opacity: 1;          /* fully visible */
+  font-weight: bold;   /* makes arrow thicker */
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translate(-50%, 0);
+  }
+  40% {
+    transform: translate(-50%, -15px);
+  }
+  60% {
+    transform: translate(-50%, -7px);
+  }
+}
+
