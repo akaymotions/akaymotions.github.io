@@ -1,19 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container{
-
-
+.container {
 }
 
-h1{
+h1 {
     font-family: 'montserrat medium';
 }
 
-body{
+body {
     font-family: 'poppins';
     background: #fff;
     color: #111;
@@ -21,13 +19,12 @@ body{
     background-size: cover;
 }
 
-.landingpage-image{
+.landingpage-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
-
 
 section h1 {
     font-size: 1.8rem;
@@ -47,56 +44,95 @@ section h1 {
     }
 }
 
-
-
 .video-grid {
-  display: flex;
-  flex-grow: wrap;
-  gap: 50px;
-  width: 70%;
-  justify-content: center; /* <-- This is key */
-  padding: 5%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5%;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+.video-grid::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for cleaner look */
+}
+
+.video-grid .video-trigger {
+    flex: 0 0 auto;
+    width: 300px; /* Fixed width to maintain video size */
 }
 
 @media screen and (max-width: 600px) {
-  .video-grid {
-    display: flex;
-    flex-grow: wrap;
-    gap: 30px;
-    width: 90%;
-    justify-content: center; /* <-- This is key */
-    padding: 5%;
-  }
+    .video-grid {
+        gap: 15px;
+        width: 95%;
+        padding: 5%;
+    }
+    .video-grid .video-trigger {
+        width: 200px; /* Smaller fixed width for mobile */
+    }
 }
 
+.reels-wrapper {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.scroll-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
 
 video {
-  width: 90%;
-  margin-left: 3%;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  margin-top: 20px;
+    width: 90%;
+    margin-left: 3%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 20px;
 }
 
 .video-grid video {
-  width: 100%;
-  margin: 0;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  margin-top: 20px;
+    width: 100%;
+    margin: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 20px;
 }
 
-
-.video-grid2{
+.video-grid2 {
     display: grid;
     gap: 10px;
     justify-content: center;
-   
 }
 
-.video-grid2 video{
+.video-grid2 video {
     width: 90%;
     margin-left: 5%;
     border-radius: 10px;
@@ -106,17 +142,17 @@ video {
 }
 
 @media screen and (max-width: 600px) {
-  .video-grid2{
-    display: grid;
-    gap: 10px;
-    justify-content: center;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 25px;
-}
+    .video-grid2 {
+        display: grid;
+        gap: 10px;
+        justify-content: center;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 25px;
+    }
 }
 
-h2{
+h2 {
     font-family: 'montserrat medium';
 }
 
@@ -128,8 +164,17 @@ section h2 {
     margin-top: 5%;
 }
 
+@media screen and (max-width: 600px) {
+    section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        text-align: center;
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+}
 
-section .view-more{
+section .view-more {
     margin-left: 72%;
     margin-top: 40px;
     font-size: 25px;
@@ -142,39 +187,38 @@ section .view-more{
     padding-right: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
-    }
+}
 
-    section .view-more:hover {
-      transform: scale(1.05); /* Slightly zoom in the video on hover */
-      transition: transform 0.3s ease;
-    }
+section .view-more:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
 
 @media screen and (max-width: 600px) {
-section .view-more{
-    margin-left: 55%;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    font-size: 30px;
-    background: linear-gradient(45deg, #ff6600, #fbff00);
-    border-radius: 10px;
-    outline: none;
-    font-family: 'montserrat medium';
-    font-size: 0.9rem;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    section .view-more {
+        margin-left: 60%;
+        margin-top: 10px;
+        margin-bottom: 40px;
+        font-size: 0.9rem;
+        background: linear-gradient(45deg, #ff6600, #fbff00);
+        border-radius: 10px;
+        outline: none;
+        font-family: 'montserrat medium';
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 }
 
 .video-grid video:hover {
-  transform: scale(1.05); /* Slightly zoom in the video on hover */
-  transition: transform 0.3s ease;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 .video-grid2 video:hover {
-  transform: scale(1.05); /* Slightly zoom in the video on hover */
-  transition: transform 0.3s ease;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 .video-lightbox {
@@ -188,40 +232,42 @@ section .view-more{
     align-items: center;
     justify-content: center;
     z-index: 999;
-  }
-  
-  .video-lightbox video {
+}
+
+.video-lightbox video {
     max-width: 90%;
     max-height: 80%;
     border-radius: 10px;
-  }
-  
-  .close-btn {
+}
+
+.close-btn {
     position: absolute;
-    top: 5%; /* Increase the value to move it down */
+    top: 5%;
     right: 5%;
     color: white;
     font-size: 2rem;
     cursor: pointer;
-    z-index: 10000; /* Ensures the close button is always above other content */
-  }
-  .close-btn img {
+    z-index: 10000;
+}
+
+.close-btn img {
     width: 30px;
     height: 30px;
-  }
-  .video-trigger{
+}
+
+.video-trigger {
     position: relative;
     display: inline-block;
-  }
+}
 
-  .video-trigger video{
+.video-trigger video {
     width: 100%;
     height: auto;
     display: block;
     margin: 0;
-  }
+}
 
-  .play-button{
+.play-button {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -232,10 +278,10 @@ section .view-more{
     background-size: contain;
     pointer-events: none;
     z-index: 2;
-  }
+}
 
-  @media screen and (max-width: 600px) {
-    .play-button{
+@media screen and (max-width: 600px) {
+    .play-button {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -246,31 +292,31 @@ section .view-more{
         background-size: contain;
         pointer-events: none;
         z-index: 2;
-      }
-  }
+    }
+}
 
-  .connect-section {
+.connect-section {
     margin-top: 60px;
     padding: 40px 20px;
     background-color: #111;
     color: #fff;
     text-align: center;
     font-family: 'poppins';
-  }
-  
-  .connect-section h2 {
+}
+
+.connect-section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-  }
-  
-  .social-links {
+}
+
+.social-links {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
-  }
-  
-  .social-links a {
+}
+
+.social-links a {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -281,18 +327,18 @@ section .view-more{
     padding: 10px 20px;
     border-radius: 8px;
     transition: background 0.3s ease;
-  }
-  
-  .social-links a:hover {
+}
+
+.social-links a:hover {
     background: #444;
-  }
-  
-  .social-links img {
+}
+
+.social-links img {
     width: 24px;
     height: 24px;
-  }
-  
-  .video-label {
+}
+
+.video-label {
     font-family: 'Montserrat medium';
     font-size: 1.5rem;
     color: #333;
@@ -300,16 +346,16 @@ section .view-more{
     margin-left: 5%;
     margin-bottom: 20px;
     text-align: left;
-  }
+}
 
-  @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .video-label {
-      font-family: 'Montserrat medium';
-      font-size: 0.9rem;
-      color: #333;
-      margin-top: 20px;
-      margin-left: 5%;
-      margin-bottom: 20px;
-      text-align: left;
+        font-family: 'Montserrat medium';
+        font-size: 0.9rem;
+        color: #333;
+        margin-top: 20px;
+        margin-left: 5%;
+        margin-bottom: 20px;
+        text-align: left;
     }
-  }
+}
